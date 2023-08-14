@@ -1,0 +1,19 @@
+HTTrack3.49-2+htsswf+htsjava launched on Mon, 10 Apr 2023 12:15:01 at https://themesbrand.com/skote/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://themesbrand.com/skote/ -O1 "C:\My Web Sites\newsapp2" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+12:19:35	Warning: 	File not parsed, looks like binary: https://themesbrand.com/skote/docs/assets/fonts/materialdesignicons-webfont.woff2?v=5.0.45
+12:19:35	Warning: 	File not parsed, looks like binary: https://themesbrand.com/skote/layouts/assets/fonts/materialdesignicons-webfont.woff2?v=5.8.55
+12:19:35	Warning: 	File not parsed, looks like binary: https://themesbrand.com/skote/layouts/assets/fonts/boxicons.woff2
+12:19:35	Warning: 	File not parsed, looks like binary: https://themesbrand.com/skote/layouts/assets/fonts/fa-brands-400.woff2
+12:19:36	Warning: 	File not parsed, looks like binary: https://themesbrand.com/skote/layouts/assets/fonts/fa-regular-400.woff2
+12:19:36	Warning: 	File not parsed, looks like binary: https://themesbrand.com/skote/layouts/assets/fonts/fa-solid-900.woff2
+12:19:37	Error: 	"Not Found" (404) at link https://themesbrand.com/skote/layouts/assets/libs/summernote/summernote-bs4.min.css (from https://themesbrand.com/skote/layouts/email-read.html)
+12:19:38	Error: 	"Not Found" (404) at link https://themesbrand.com/skote/layouts/assets/libs/flot.curvedLines/curvedLines.js (from https://themesbrand.com/skote/layouts/charts-flot.html)
+
+HTTrack Website Copier/3.49-2 mirror complete in 4 minutes 38 seconds : 541 links scanned, 538 files written (52483527 bytes overall) [33189687 bytes received at 119387 bytes/sec], 24131051 bytes transferred using HTTP compression in 352 files, ratio 19%, 13.2 requests per connection
+(2 errors, 6 warnings, 0 messages)
