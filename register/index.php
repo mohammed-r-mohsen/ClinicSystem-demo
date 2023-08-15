@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="signup-content">
                   
-                    <form method="POST" action="../php/submitreg.php"  id="signup-form" class="signup-form" novalidate="novalidate">
+                    <form method="POST" action="../php/controller/submitreg.php"  id="signup-form" class="signup-form" novalidate="novalidate">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="first_name">First name</label>
