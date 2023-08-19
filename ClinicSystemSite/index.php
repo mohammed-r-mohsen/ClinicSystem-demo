@@ -37,9 +37,41 @@
             <div class="row">
                 <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-decoration-none text-body pe-3" href="">Register</a>
+                        <a class="text-decoration-none text-body pe-3" href="<?php 
+                        session_start();  
+                        if(isset($_SESSION['id'])) {
+                           echo "../php/controller/logout.php";
+                          }
+                          else {
+                            echo "../register/";
+                          }
+                        ?>">
+                        <?php   
+                        if(isset($_SESSION['id'])) {
+                           echo "Logout";
+                          }
+                          else {
+                            echo "register";
+                          }   ?>
+
+                    </a>
                         <span class="text-body">|</span>
-                        <a class="text-decoration-none text-body px-3" href="#">Login</a>
+                        <a class="text-decoration-none text-body px-3" href="<?php   
+                        if(isset($_SESSION['id'])) {
+                           echo "#";
+                          }
+                          else {
+                            echo "../Login/";
+                          }
+                        ?>">
+                            <?php 
+                            if(isset($_SESSION['username'])) 
+                                echo $_SESSION['username'];
+                            else 
+                                echo "login";
+                            ?>
+                    
+                    </a></a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-end">
@@ -79,22 +111,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="price.html" class="nav-item nav-link">Pricing</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                                <a href="team.html" class="dropdown-item">The Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="appointment.html" class="dropdown-item">Appointment</a>
-                                <a href="search.html" class="dropdown-item">Search</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <?php include './include.html'?>
                     </div>
                 </div>
             </nav>
@@ -135,7 +152,7 @@
                         <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">About Us</h5>
                         <h1 class="display-4">Best Medical Care For Yourself and Your Family</h1>
                     </div>
-                    <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+                    <p>A family health insurance plan is a kind of medical insurance that covers all your family members in a single health insurance policy. Under this plan, a fixed sum insured is shared by all family members with an assumption that not everyone will get sick at the same time. Most family health insurance plans offer cashless hospitalization facilities, maternity benefits and cover pre & post hospitalization as well. </p>
                     <div class="row g-3 pt-3">
                         <div class="col-sm-3 col-6">
                             <div class="bg-light text-center rounded-circle py-4">
@@ -183,7 +200,7 @@
                             <i class="fa fa-2x fa-user-md text-white"></i>
                         </div>
                         <h4 class="mb-3">Emergency Care</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
+                        <p class="m-0">Action For Humanity has been working in Palestine since 2021 and, as well as providing humanitarian aid in the recent spike in violence impacting Gaza.....</p>
                         <a class="btn btn-lg btn-primary rounded-pill" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -195,7 +212,7 @@
                             <i class="fa fa-2x fa-procedures text-white"></i>
                         </div>
                         <h4 class="mb-3">Operation & Surgery</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
+                        <p class="m-0">Some operations that once needed large incisions (cuts in the body) can now be done using much smaller cuts. This is called laparoscopic surgery....</p>
                         <a class="btn btn-lg btn-primary rounded-pill" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -207,7 +224,7 @@
                             <i class="fa fa-2x fa-stethoscope text-white"></i>
                         </div>
                         <h4 class="mb-3">Outdoor Checkup</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
+                        <p class="m-0">FAMILY PRACTICE ASSOCIATES OF UPPER DUBLIN</p>
                         <a class="btn btn-lg btn-primary rounded-pill" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -219,7 +236,7 @@
                             <i class="fa fa-2x fa-ambulance text-white"></i>
                         </div>
                         <h4 class="mb-3">Ambulance Service</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
+                        <p class="m-0">We Are Committed To Providing Excellence in Patient Care and Customer Service.</p>
                         <a class="btn btn-lg btn-primary rounded-pill" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -231,7 +248,7 @@
                             <i class="fa fa-2x fa-pills text-white"></i>
                         </div>
                         <h4 class="mb-3">Medicine & Pharmacy</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
+                        <p class="m-0">The pharmacy that cares for the wellbeing of you and your family.</p>
                         <a class="btn btn-lg btn-primary rounded-pill" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -243,7 +260,7 @@
                             <i class="fa fa-2x fa-microscope text-white"></i>
                         </div>
                         <h4 class="mb-3">Blood Testing</h4>
-                        <p class="m-0">Kasd dolor no lorem nonumy sit labore tempor at justo rebum rebum stet, justo elitr dolor amet sit</p>
+                        <p class="m-0"> Laboratory testing for children is a special service, which requires a special expertise. Labcorp patient service centers with this designation......</p>
                         <a class="btn btn-lg btn-primary rounded-pill" href="">
                             <i class="bi bi-arrow-right"></i>
                         </a>
@@ -264,7 +281,7 @@
                         <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Appointment</h5>
                         <h1 class="display-4">Make An Appointment For Your Family</h1>
                     </div>
-                    <p class="text-white mb-5">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
+                    <p class="text-white mb-5">An appointment is a preset arrangement to meet, like a dentist’s appointment, an appointment with your accountant, or an appointment to have your palm read.</p>
                     <a class="btn btn-dark rounded-pill py-3 px-5 me-3" href="">Find Doctor</a>
                     <a class="btn btn-outline-dark rounded-pill py-3 px-5" href="">Read More</a>
                 </div>
@@ -425,7 +442,6 @@
                             <div class="mt-auto p-4">
                                 <h3>Doctor Name</h3>
                                 <h6 class="fw-normal fst-italic text-primary mb-4">Cardiology Specialist</h6>
-                                <p class="m-0">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
                             </div>
                             <div class="d-flex mt-auto border-top p-4">
                                 <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
@@ -444,7 +460,6 @@
                             <div class="mt-auto p-4">
                                 <h3>Doctor Name</h3>
                                 <h6 class="fw-normal fst-italic text-primary mb-4">Cardiology Specialist</h6>
-                                <p class="m-0">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
                             </div>
                             <div class="d-flex mt-auto border-top p-4">
                                 <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
@@ -463,7 +478,6 @@
                             <div class="mt-auto p-4">
                                 <h3>Doctor Name</h3>
                                 <h6 class="fw-normal fst-italic text-primary mb-4">Cardiology Specialist</h6>
-                                <p class="m-0">Dolor lorem eos dolor duo eirmod sea. Dolor sit magna rebum clita rebum dolor</p>
                             </div>
                             <div class="d-flex mt-auto border-top p-4">
                                 <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
@@ -485,7 +499,6 @@
             <div class="text-center mx-auto mb-5" style="max-width: 500px;">
                 <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">Find A Doctor</h5>
                 <h1 class="display-4 mb-4">Find A Healthcare Professionals</h1>
-                <h5 class="text-white fw-normal">Duo ipsum erat stet dolor sea ut nonumy tempor. Tempor duo lorem eos sit sed ipsum takimata ipsum sit est. Ipsum ea voluptua ipsum sit justo</h5>
             </div>
             <div class="mx-auto" style="width: 100%; max-width: 600px;">
                 <div class="input-group">

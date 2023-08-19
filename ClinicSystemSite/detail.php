@@ -35,11 +35,44 @@
     <div class="container-fluid py-2 border-bottom d-none d-lg-block">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+                 <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-decoration-none text-body pe-3" href="">Register</a>
+                        <a class="text-decoration-none text-body pe-3" href="<?php 
+                        session_start();  
+                        if(isset($_SESSION['id'])) {
+                           echo "../php/controller/logout.php";
+                          }
+                          else {
+                            echo "../register/";
+                          }
+                        ?>">
+                        <?php   
+                        if(isset($_SESSION['id'])) {
+                           echo "Logout";
+                          }
+                          else {
+                            echo "register";
+                          }   ?>
+
+                    </a>
                         <span class="text-body">|</span>
-                        <a class="text-decoration-none text-body px-3" href="#">Login</a>
+                        <a class="text-decoration-none text-body px-3" href="<?php   
+                        if(isset($_SESSION['id'])) {
+                           echo "#";
+                          }
+                          else {
+                            echo "../Login/";
+                          }
+                        ?>">
+                            <?php 
+                            if(isset($_SESSION['username'])) 
+                                echo $_SESSION['username'];
+                            else 
+                                echo "login";
+                            ?>
+                    
+                    
+                    </a></a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-end">
@@ -79,22 +112,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link">Service</a>
-                        <a href="price.html" class="nav-item nav-link">Pricing</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                                <a href="detail.html" class="dropdown-item active">Blog Detail</a>
-                                <a href="team.html" class="dropdown-item">The Team</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="appointment.html" class="dropdown-item">Appointment</a>
-                                <a href="search.html" class="dropdown-item">Search</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <?php include './include.html'?>
                     </div>
                 </div>
             </nav>

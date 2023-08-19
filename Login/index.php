@@ -39,8 +39,15 @@
 <div class="col-md-5 contents">
 <div class="form-block">
 <div class="mb-4">
-<h3>Sign In to <strong>Colorlib</strong></h3>
-<p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p>
+<?php
+  session_start();
+  if(isset($_SESSION["message"])){?>  
+<div class="alert alert-danger" role="alert">
+  Error username or password please try again 
+</div>
+
+<?php }?>
+<h3>Sign In to <strong>Medinova</strong></h3>
 </div>
 <form action="../php/controller/login.php" method="post">
 <div class="form-group first">
