@@ -61,13 +61,13 @@
                             </div>
                             
                             <div class="form-radio">
-                                <label for="gender">Gender</label>
+                                <label for="type">type</label>
                                 <div class="form-flex">
-                                    <input type="radio" name="gender" value="male" id="male" checked="checked" class="valid" aria-invalid="false">
-                                    <label for="male">Male</label>
+                                    <input type="radio" name="type" value="user" id="user" checked="checked" class="valid" aria-invalid="false">
+                                    <label for="user">user</label>
     
-                                    <input type="radio" name="gender" value="female" id="female" class="valid" aria-invalid="false">
-                                    <label for="female">Female</label>
+                                    <input type="radio" name="type" value="doctor" id="doctor" class="valid" aria-invalid="false">
+                                    <label for="doctor">doctor</label>
                                 </div>
                             </div>
                         </div>
