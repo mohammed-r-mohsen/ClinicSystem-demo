@@ -1,7 +1,7 @@
 <?php
 include '../model/user.php';
 include '../model/doctor.php';
-include '../controller/doctorDB.php'
+include '../controller/doctorDB.php';
 include '../controller/userDB.php';
 
 if(isset($_POST['regsubmit'])):
@@ -14,8 +14,8 @@ if($_POST['type'] == "user") {
     DataBase::getDBoperation()->GetConn();
     userDB::GetUserDB()->CreateUser($user);
 }elseif ($_POST['type']=="doctor") {
-    $user = new user($username, $phone, $password, $email);
+    $doctor = new doctor($username, $phone, $password, $email);
     DataBase::getDBoperation()->GetConn();
-    userDB::GetUserDB()->CreateUser($user);
+    doctorDB::GetDoctorDB()->CreateDoctor($doctor);
 }
 endif;

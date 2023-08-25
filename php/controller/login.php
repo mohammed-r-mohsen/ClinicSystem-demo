@@ -5,6 +5,7 @@
     unset($_SESSION['message']);
     $username = $_POST['username'];
     $password = $_POST['password'];
+
     $row = userDB::GetUserDB()->GetUserData();
  foreach ($row as $item):
        $verfiypassword = password_verify($password, $item['password'] );
@@ -19,3 +20,7 @@
     endif;
 endforeach;
 endif;
+
+
+// CHECK IF USER THEN CHECK IF DOCTOR 
+

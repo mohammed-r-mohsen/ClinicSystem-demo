@@ -1,15 +1,14 @@
 <?php 
-    include 'DATABASE.php';
  class doctorDB
 {
     private static $doctorDB = null ;  
     private $TableName = "doctor";
     
-   public static function GetUserDB()
+   public static function GetDoctorDB()
    {
        if(self::$doctorDB ==null)
        {
-           self::$doctorDB = new userDB();
+           self::$doctorDB = new doctorDB();
        }
        return self::$doctorDB;
    }
@@ -27,10 +26,10 @@
     }
 
 
-     public function CreateUser(doctor $doctor)
+     public function CreateDoctor(doctor $doctor)
      {
          $doctorName=$doctor->Getusername();
-         $UserEmail= $doctor->getEmail();
+         $doctorEmail= $doctor->getEmail();
          $phone=$doctor->getPhone();
          $Password =$doctor->getpassword();
         
@@ -40,10 +39,8 @@
              $dirname = uniqid();
  
             $dbsql='USE '.DataBase::getDBoperation()->getdbName();
-            $sql = "INSERT INTO `doctor`(`username`, `email`, `password`, `number`, `folder`, `type`) 
-                    VALUES ('$UserName','$UserEmail','$Password','$phone','$dirname','user');";
-             mkdir("../php/stoarage/$dirname",0700 , true);               
-             
+            $sql = "INSERT INTO `doctor`( `username`, `email`, `password`, `phone`) 
+                    VALUES ('$doctorName','$doctorEmail','$Password','$phone')"; 
             DataBase::getDBoperation()->GetConn()->exec($dbsql);
             DataBase::getDBoperation()->GetConn()->exec($sql);
             
@@ -51,7 +48,8 @@
             
             DataBase::getDBoperation()->disconnect();
         } catch (PDOException $th) {
-            return header("Location:http://localhost/ClinicSystem/register/");
+            echo "$th";
+            // return header("Location:http://localhost/ClinicSystem/register/");
 
         }
      }
