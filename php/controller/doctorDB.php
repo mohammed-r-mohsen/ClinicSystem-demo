@@ -123,13 +123,13 @@
         
      }
       
-      public function GetUserData()
+      public function GetdoctorData()
       {
           try {
               DataBase::getDBoperation()->connect();
 
               $dbsql = 'USE '.DataBase::getDBoperation()->getdbName();
-              $sql = "SELECT * FROM user;";
+              $sql = "SELECT * FROM doctor;";
               DataBase::getDBoperation()->GetConn()->exec($dbsql);
               $result =  DataBase::getDBoperation()->GetConn()->prepare($sql);
               $result->execute();

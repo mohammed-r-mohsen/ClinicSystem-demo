@@ -25,9 +25,7 @@ foreach ($rowdoctor as $item) :
      $_SESSION['username'] = $item['username'];
      return  header("Location:http://localhost/ClinicSystem/ClinicSystemSite/");
  endif;
- 
 endforeach;
 endif;
 // CHECK IF USER THEN CHECK IF DOCTOR
 $_SESSION['message'] = "Error username or password please try again "; 
-header("Location:http://localhost/ClinicSystem/Login/" , ); 
